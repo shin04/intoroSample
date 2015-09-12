@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "EAIntroView.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    // basic
+    EAIntroPage *page1 = [EAIntroPage page];
+    page1.bgImage = [UIImage imageNamed:@"apple.jpg"];
+    page1.title = @"Hello world";
+    page1.desc = @"test1";
+    
+    EAIntroPage *page2 = [EAIntroPage page];
+    page2.bgImage = [UIImage imageNamed:@"apple.jpg"];
+    page2.title = @"Hello world";
+    page2.desc = @"test2";
+    
+    EAIntroPage *page3 = [EAIntroPage page];
+    page3.bgImage = [UIImage imageNamed:@"apple.jpg"];
+    page3.title = @"Hello world";
+    page3.desc = @"test3";
+    
+    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3]];
+    
+    [intro setDelegate:self];
+    
+    [intro showInView:self.view animateDuration:0.0];
 }
 
 - (void)didReceiveMemoryWarning {
