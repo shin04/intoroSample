@@ -35,7 +35,12 @@
     page3.title = @"Hello world";
     page3.desc = @"test3";
     
-    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3]];
+    EAIntroPage *page4 = [EAIntroPage page];
+    page4.bgImage = [UIImage imageNamed:@"apple.jpg"];
+    page4.title = @"Hello world";
+    page4.desc = @"test4";
+    
+    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3,page4]];
     
     [intro setDelegate:self];
     
